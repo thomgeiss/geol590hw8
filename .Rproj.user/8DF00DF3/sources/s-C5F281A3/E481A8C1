@@ -5,13 +5,15 @@
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "584869714",
+    "hash" : "2731838282",
     "id" : "E481A8C1",
-    "lastKnownWriteTime" : 1531777310,
-    "last_content_update" : 1531777310,
+    "lastKnownWriteTime" : 1572297758,
+    "last_content_update" : 1572297758318,
     "path" : "~/school/geol_590/hw8/hw8/app.R",
     "project_path" : "hw8/app.R",
     "properties" : {
+        "cursorPosition" : "36,35",
+        "scrollLine" : "31"
     },
     "relative_order" : 1,
     "source_on_save" : false,
