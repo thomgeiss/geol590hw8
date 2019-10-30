@@ -22,11 +22,11 @@ ui <- fluidPage(
    # Sidebar with a slider input for number of bins 
    sidebarLayout(
       sidebarPanel(
-         sliderInput("bins",
-                     "Number of bins:",
-                     min = 1,
-                     max = 50,
-                     value = 30)
+         sliderInput("Chick age adjuster",
+                     "Age (days):",
+                     min = min.age,
+                     max = max.age,
+                     value = c(min.age, max.age))
       ),
       
       # Show a plot of the generated distribution
