@@ -1,11 +1,6 @@
-#
-# This is a Shiny web application. You can run the application by clicking
-# the 'Run App' button above.
-#
-# Find out more about building applications with Shiny here:
-#
-#    http://shiny.rstudio.com/
-#
+#########
+# Shiny App for chick weights (hw8)
+#########
 
 library(shiny)
 library(tidyverse)
@@ -49,7 +44,8 @@ server <- function(input, output) {
   })
    
    output$chicks_plot <- renderPlot({
-      ggplot(ChickWeight, aes(x = ChickWeight$Time, y = ChickWeight$weight, color = ChickWeight$Diet)) + geom_point()
+      ggplot(d_filt(), aes_string(x = "Time", y = "weight", color = "Diet")) + 
+       geom_point()
    })
 }
 
