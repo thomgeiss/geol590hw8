@@ -22,8 +22,8 @@ ui <- fluidPage(
    # Sidebar with a slider input for number of bins 
    sidebarLayout(
       sidebarPanel(
-         sliderInput("Chick age adjuster",
-                     "Age (days):",
+         sliderInput("chick.age.adjuster",
+                     "Chick age (days):",
                      min = min.age,
                      max = max.age,
                      value = c(min.age, max.age))
@@ -38,6 +38,15 @@ ui <- fluidPage(
 
 # Define server logic required to draw a histogram
 server <- function(input, output) {
+  
+  d_filt <- reactive({
+    low.age <- input$chick.age.adjuster[1]
+    hi.age <- input$chick.age.adjuster[2]
+    
+    ChickWeight %>%
+      filter (Time >= low.age) %>%
+      filter (Time <= hi.age)
+  })
    
    output$chicks_plot <- renderPlot({
       ggplot(ChickWeight, aes(x = ChickWeight$Time, y = ChickWeight$weight, color = ChickWeight$Diet)) + geom_point()
